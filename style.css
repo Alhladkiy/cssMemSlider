@@ -94,7 +94,6 @@ body {
 }
 
 .slider-text {
-    font-size: 2rem;
     color: #ffffff;
     visibility: hidden;
     height: 0;
@@ -102,6 +101,7 @@ body {
     transform: translateX(10rem);
     transition: transform 0.5s ease-out, opacity 0.5s ease-out;
     margin: 0;
+    font-size: 0;
 }
 
 .slider-bottom-content {
@@ -119,6 +119,8 @@ body {
     height: auto;   
     opacity: 1;
     transform: translateX(0);
+    font-size: 2rem;
+
 }
 
 @media screen and (max-width: 1024px) {
@@ -134,5 +136,16 @@ body {
     .text-container {
         margin-top: 1.25rem;
     }
-}
+
+    .slider-text {
+        transform: translateX(4rem);
+    }
     
+    .slider-radio-input:nth-child(1):checked ~ .slider-bottom-content .slider-text:nth-child(1),
+    .slider-radio-input:nth-child(2):checked ~ .slider-bottom-content .slider-text:nth-child(2),
+    .slider-radio-input:nth-child(3):checked ~ .slider-bottom-content .slider-text:nth-child(3),
+    .slider-radio-input:nth-child(4):checked ~ .slider-bottom-content .slider-text:nth-child(4) {
+        font-size: 1.25rem;
+        line-height: 1.5rem;
+    }
+}
